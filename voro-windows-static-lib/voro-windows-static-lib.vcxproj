@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B3248530-47D0-4685-8A79-F43CD731EEFF}</ProjectGuid>
     <RootNamespace>vorowindowsstaticlib</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.10240.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -38,15 +38,15 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -103,6 +103,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -110,6 +111,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\..\voro++-0.4.6\src\cell.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\voro++-0.4.6\src\cmd_line.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\voro++-0.4.6\src\common.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\voro++-0.4.6\src\container.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\voro++-0.4.6\src\container_prd.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\voro++-0.4.6\src\c_loops.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\voro++-0.4.6\src\pre_container.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\voro++-0.4.6\src\unitcell.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\voro++-0.4.6\src\v_base.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\voro++-0.4.6\src\v_base_wl.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\voro++-0.4.6\src\v_compute.cc" />
+    <ClCompile Include="..\..\..\..\..\..\..\voro++-0.4.6\src\wall.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\..\voro++-0.4.6\src\cell.hh" />
+    <ClInclude Include="..\..\..\..\..\..\..\voro++-0.4.6\src\common.hh" />
+    <ClInclude Include="..\..\..\..\..\..\..\voro++-0.4.6\src\config.hh" />
+    <ClInclude Include="..\..\..\..\..\..\..\voro++-0.4.6\src\container.hh" />
+    <ClInclude Include="..\..\..\..\..\..\..\voro++-0.4.6\src\container_prd.hh" />
+    <ClInclude Include="..\..\..\..\..\..\..\voro++-0.4.6\src\c_loops.hh" />
+    <ClInclude Include="..\..\..\..\..\..\..\voro++-0.4.6\src\pre_container.hh" />
+    <ClInclude Include="..\..\..\..\..\..\..\voro++-0.4.6\src\rad_option.hh" />
+    <ClInclude Include="..\..\..\..\..\..\..\voro++-0.4.6\src\unitcell.hh" />
+    <ClInclude Include="..\..\..\..\..\..\..\voro++-0.4.6\src\voro++.hh" />
+    <ClInclude Include="..\..\..\..\..\..\..\voro++-0.4.6\src\v_base.hh" />
+    <ClInclude Include="..\..\..\..\..\..\..\voro++-0.4.6\src\v_compute.hh" />
+    <ClInclude Include="..\..\..\..\..\..\..\voro++-0.4.6\src\wall.hh" />
+    <ClInclude Include="..\..\..\..\..\..\..\voro++-0.4.6\src\worklist.hh" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\..\..\voro++-0.4.6\src\Doxyfile" />
+    <None Include="..\..\..\..\..\..\..\voro++-0.4.6\src\Makefile" />
+    <None Include="..\..\..\..\..\..\..\voro++-0.4.6\src\Makefile.dep" />
+    <None Include="..\..\..\..\..\..\..\voro++-0.4.6\src\README" />
+    <None Include="..\..\..\..\..\..\..\voro++-0.4.6\src\worklist_gen.pl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
